@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"iso8583/Iso8583"
+	"github.com/istabraq/iso8583/Iso8583"
 )
 
 func main() {

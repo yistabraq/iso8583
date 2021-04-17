@@ -1,7 +1,7 @@
 package spec
 
 import (
-	fieldValidator "iso8583/FieldValidator"
+	fieldValidator "github.com/istabraq/iso8583/FieldValidator"
 )
 
 func BPCEPOSBody() TemplateDef {

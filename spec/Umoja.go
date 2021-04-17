@@ -1,8 +1,8 @@
 package spec
 
 import (
-	fieldValidator "iso8583/FieldValidator"
-	formatter "iso8583/Formatter"
+	fieldValidator "github.com/istabraq/iso8583/FieldValidator"
+	formatter "github.com/istabraq/iso8583/Formatter"
 )
 
 func UmojaBody() TemplateDef {

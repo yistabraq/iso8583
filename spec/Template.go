@@ -1,6 +1,6 @@
 package spec
 
-import formatter "iso8583/Formatter"
+import formatter "github.com/istabraq/iso8583/Formatter"
 
 type TemplateDef map[int]IFieldDescriptor
 

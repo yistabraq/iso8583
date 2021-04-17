@@ -2,7 +2,8 @@ package formatter
 
 import (
 	"encoding/hex"
-	utils "iso8583/Utils"
+
+	utils "github.com/istabraq/iso8583/Utils"
 )
 
 type BcdFormatter struct {

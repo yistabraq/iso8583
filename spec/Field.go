@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	fieldValidator "iso8583/FieldValidator"
-	utils "iso8583/Utils"
+	utils "github.com/istabraq/iso8583/Utils"
+
+	fieldValidator "github.com/istabraq/iso8583/FieldValidator"
 )
 
 type Field struct {

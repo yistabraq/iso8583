@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"strings"
 
-	formatter "iso8583/Formatter"
-	utils "iso8583/Utils"
+	formatter "github.com/istabraq/iso8583/Formatter"
+	utils "github.com/istabraq/iso8583/Utils"
 )
 
 type VariableLengthFormatter struct {

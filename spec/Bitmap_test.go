@@ -2,8 +2,9 @@ package spec
 
 import (
 	"encoding/hex"
-	formatter "iso8583/Formatter"
 	"testing"
+
+	formatter "github.com/istabraq/iso8583/Formatter"
 )
 
 func TestBitmapDefaultFormatter(t *testing.T) {

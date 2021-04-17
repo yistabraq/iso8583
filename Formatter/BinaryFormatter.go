@@ -3,8 +3,9 @@ package formatter
 import (
 	"encoding/hex"
 	"errors"
-	validator "iso8583/Validator"
 	"strings"
+
+	validator "github.com/istabraq/iso8583/Validator"
 )
 
 type BinaryFormatter struct {

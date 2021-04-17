@@ -7,10 +7,10 @@ import (
 	"log"
 	"strings"
 
-	fieldValidator "iso8583/FieldValidator"
-	formatter "iso8583/Formatter"
-	lengthFormatters "iso8583/LengthFormatters"
-	utils "iso8583/Utils"
+	fieldValidator "github.com/istabraq/iso8583/FieldValidator"
+	formatter "github.com/istabraq/iso8583/Formatter"
+	lengthFormatters "github.com/istabraq/iso8583/LengthFormatters"
+	utils "github.com/istabraq/iso8583/Utils"
 )
 
 type FieldDescriptor struct {

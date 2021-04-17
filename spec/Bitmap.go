@@ -1,7 +1,7 @@
 package spec
 
 import (
-	formatter "iso8583/Formatter"
+	formatter "github.com/istabraq/iso8583/Formatter"
 )
 
 type Bitmap struct {

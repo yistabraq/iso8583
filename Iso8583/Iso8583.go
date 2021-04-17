@@ -1,7 +1,7 @@
 package Iso8583
 
 import (
-	spec "iso8583/spec"
+	spec "github.com/istabraq/iso8583/spec"
 )
 
 type (
