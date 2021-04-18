@@ -58,7 +58,7 @@ func NewFieldDescriptor(lenFormatter lengthFormatters.ILengthFormatter, vald fie
 
 	if _, ok1 := format.(*formatter.BcdFormatter); ok1 {
 		if _, ok2 := vald.(*fieldValidator.NumericFieldValidator); !ok2 {
-			return nil, errors.New("A Binary field must have a hex validator")
+			return nil, errors.New("A BCD field must have a numeric validator")
 		}
 	}
 

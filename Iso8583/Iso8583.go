@@ -72,8 +72,8 @@ func (msg *Iso8583) GetHeaderValue(field int) string {
 
 	return msg.AHeader.GetFieldValue(field)
 }
-func (msg *Iso8583) SetMti(mti string) {
-	msg.AHeader.SetFieldValue(0, mti)
+func (msg *Iso8583) SetMti(mti string) error {
+	return msg.AHeader.SetFieldValue(0, mti)
 }
 
 func (msg *Iso8583) ToFields() (h, b map[string]string) {

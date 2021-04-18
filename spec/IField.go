@@ -4,7 +4,7 @@ type IField interface {
 	FieldNumber() int
 	PackedLength() int
 	Value() string
-	SetValue(string)
+	SetValue(string) (bool, string)
 	ToMsg() []byte
 	Unpack([]byte, int) (int, error)
 	ToString(string) string

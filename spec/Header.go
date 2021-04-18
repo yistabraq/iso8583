@@ -116,7 +116,10 @@ func (header *Header) GetFieldValue(field int) string {
 func (header *Header) SetFieldValue(field int, value string) error {
 
 	header.Fields[field] = header.CreateFieldCallback(field)
-	header.Fields[field].SetValue(value)
+	ok,msg := header.Fields[field].SetValue(value)
+	if !ok {
+		return fmt.Errorf(msg)
+	}
 	header.json[fmt.Sprintf("%d", field)] = header.Fields[field].Value()
 	return nil
 }

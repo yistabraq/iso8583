@@ -71,7 +71,7 @@ func (fld *Field) SubFieldValue(subField int) string {
 	return fld.compositeValue.GetFieldValue(subField)
 }
 
-func (fld *Field) SetValue(value string) {
+func (fld *Field) SetValue(value string) (bool,string){
 	adjuster := fld.fieldDescriptor.Adjuster()
 	if adjuster == nil {
 		fld.fieldValue = value
@@ -80,12 +80,13 @@ func (fld *Field) SetValue(value string) {
 	}
 
 	if !fld.fieldDescriptor.Validator().IsValid(fld.fieldValue) {
-		panic(fmt.Sprintf("the value '%s' is invalid for field [No. %d] expected format is '%s'", fld.fieldValue, fld.fieldNumber, fld.fieldDescriptor.Validator().Description()))
+		return false, fmt.Sprintf("the value '%s' is invalid for field [No. %d] expected format is '%s'", fld.fieldValue, fld.fieldNumber, fld.fieldDescriptor.Validator().Description())
 	}
 
-	/*if !fld.fieldDescriptor.LengthFormatter().IsValidLength(fld.fieldDescriptor.Formatter().GetPackedLength(len(fld.fieldValue))) {
-		panic(fmt.Sprintf("The field length is not valid for field number [%d]", fld.fieldNumber))
-	}*/
+	if !fld.fieldDescriptor.LengthFormatter().IsValidLength(fld.fieldDescriptor.Formatter().GetPackedLength(len(fld.fieldValue))) {
+		return false,fmt.Sprintf("The field length is not valid for field number [%d]. This field is a '%s' and max length  is %s", fld.fieldNumber,fld.fieldDescriptor.LengthFormatter().Description(),fld.fieldDescriptor.LengthFormatter().MaxLength())
+	}
+	return true,""
 }
 
 func (fld *Field) SetSubFieldValue(subField int, value string) {

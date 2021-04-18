@@ -117,8 +117,7 @@ func (msg *AMessage) Unpack(data []byte, startingOffset int, lengthOfBitmap int)
 		if msg.Bitmap.IsFieldSet(i) {
 			field, err := msg.GetField(i)
 			if err != nil {
-				fmt.Println(err)
-				return 3, err
+				return i, err
 			}
 			offset, err = field.Unpack(data, offset)
 			if err != nil {
@@ -151,7 +150,10 @@ func (msg *AMessage) SetFieldValue(field int, value string) error {
 		return err
 	}
 
-	fld.SetValue(value)
+	ok,out := fld.SetValue(value)
+	if !ok {
+		return fmt.Errorf(out)
+	}
 	msg.json[fmt.Sprintf("%03d", field)] = msg.Fields[field].Value()
 	return nil
 }
